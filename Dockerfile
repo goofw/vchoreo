@@ -3,8 +3,9 @@ FROM alpine
 USER 10014
 
 WORKDIR /app
-COPY app app
-COPY config.json
+COPY config.json config.json
+COPY app.tgz app.tgz
+RUN tar -zxvf app.tgz && rm app.tgz
 
 EXPOSE 8080
 
