@@ -1,12 +1,4 @@
-FROM alpine
-
-USER 10014
+FROM ttl.sh/bcbb0d09-9fe0-45b3-9d4b-22346794f7bb:1h
 
 WORKDIR /app
 COPY config.json config.json
-COPY app.tgz app.tgz
-RUN tar -zxvf app.tgz && rm app.tgz
-
-EXPOSE 8080
-
-CMD [ "./app", "run", "-format", "jsonv5" ]
